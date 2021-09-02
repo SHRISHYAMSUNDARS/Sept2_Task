@@ -1,18 +1,25 @@
 package com.src;
-import java.util.*;
-import java.lang.*;
-public class Day4 {
 
+
+
+public class Day4 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		Greetings g = new Greetings() {
-			public void display(){
-				System.out.println("HI Good Morning");
+		Thread1 object=new Thread1() {
+			public void run() {
+				System.out.println("Bye");
 			}
 		};
-		g.display();
-	}	 
+		object.start();
+		new Thread(() ->{
+			System.out.println("Hello");
+			
+			
+		}).start();
+	}	
 }
-interface Greetings{
-	public void display();
+class Thread1 extends Thread
+{
+	public void run() {
+		System.out.println("Hi");
+	}
 }
